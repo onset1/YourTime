@@ -1,0 +1,194 @@
+$primary-color: rgb(0, 90, 40);
+$secondary-color: rgb(136, 212, 152);
+$third-color: rgb(198, 218, 191);
+$gray-1: rgb(40, 40, 40);
+$header-color: rgb(0, 80, 35);
+$date-color: rgb(243, 233, 210);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-rows: 80px auto auto 100px;
+  font-family: "Noto sans", "Arial";
+  background-color: $primary-color;
+  color: white;
+}
+
+header {
+  background-color: $header-color;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  font-size: 40px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, fr);
+  grid-template-rows: repeat(2, fr);
+  #header-title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+  #language-container {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    #languages-img {
+      justify-self: center;
+      align-self: center;
+      cursor: pointer;
+    }
+    #selected-language {
+      font-size: 12;
+      justify-self: center;
+      align-self: center;
+    }
+    #expand-img-top {
+      margin-left: 9px;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+  #language-list {
+    display: block;
+    position: absolute;
+    background-color: $gray-1;
+    color: white;
+    border-radius: 5px;
+    top: 50px;
+    right: 170px;
+    cursor: pointer;
+    // Little temporary trick
+    border-top: solid 8px $header-color;
+    .language-pair {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background-color: $secondary-color;
+        color: $gray-1;
+      }
+      .language-icon {
+        position: relative;
+        margin: 0;
+        display: inline-block;
+        width: 22px;
+        height: 14px;
+        right: 40px;
+        border-radius: 4px;
+        top: 14px;
+      }
+      .language-option {
+        justify-self: center;
+        align-self: center;
+        font-size: 12px;
+        position: relative;
+        display: inline-block;
+        text-align: left;
+        padding: 0px 20px 5px 40px;
+      }
+      .language-status {
+        font-size: 12px;
+        position: absolute;
+        right: 3px;
+        margin-top: 6px;
+      }
+    }
+  }
+}
+
+nav {
+  //   background-color: orange;
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  .hr {
+    color: $header-color;
+    width: 90%;
+    align-self: flex-start;
+  }
+  div {
+    width: 70%;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: left;
+    &:hover {
+      color: $gray-1;
+      background-color: $secondary-color;
+    }
+  }
+}
+
+main {
+  //   background-color: rgb(80, 0, 0);
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(2, fr);
+  grid-template-rows: repeat(2, fr);
+  align-items: center;
+  justify-items: center;
+  section {
+    // background-color: purple;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    .clock-frame {
+      background-color: $third-color;
+      color: rgb(40, 40, 40);
+      border-radius: 5px;
+      #clock-time {
+        font-size: 80px;
+        padding: 10px;
+        text-align: center;
+      }
+      #clock-date {
+        font-size: 30px;
+        text-align: center;
+        background-color: $date-color;
+      }
+    }
+  }
+  aside {
+    // background-color: gray;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    display: flex;
+    gap: 4px;
+    #expand-img {
+      cursor: pointer;
+    }
+  }
+}
+
+footer {
+  //   background-color: green;
+  grid-column: 1 / 4;
+  grid-row: 4 / 5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
