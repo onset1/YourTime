@@ -194,7 +194,7 @@ nav .hr {
       align-self: flex-start;
 }
 
-nav div {
+nav .mode-button {
   width: 70%;
   padding: 5px;
   font-size: 20px;
@@ -203,9 +203,37 @@ nav div {
   text-align: left;
 }
 
-nav div:hover {
+nav .mode-button:hover {
   color: #282828;
   background-color: #88d498;
+}
+
+nav .mode-button-timer {
+  width: 70%;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+}
+
+nav .mode-button-timer:hover {
+  color: #282828;
+  background-color: #d48898;
+}
+
+nav .mode-button-stopwatch {
+  width: 70%;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+}
+
+nav .mode-button-stopwatch:hover {
+  color: #282828;
+  background-color: #88c3d4;
 }
 
 main {
