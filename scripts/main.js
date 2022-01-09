@@ -9,6 +9,39 @@ function primary_function () {
 
 setInterval(primary_function, 1000)
 
+// Change mode: Clock
+function clock_changer () {
+    // Clock content
+    document.getElementById("timer-frame").style.display = "none";
+    document.getElementById("stopwatch-frame").style.display = "none";
+    document.getElementById("clock-frame").style.display = "block";
+    // Changing colors
+    const primary_color = "rgb(0, 90, 40)";
+    const secondary_color = "rgb(136, 212, 152)";
+    const header_color = "rgb(0, 80, 35)";
+    
+    document.getElementById("body").style.backgroundColor = primary_color;
+    
+    document.getElementById("header").style.backgroundColor = header_color;
+    
+    var hr_class = document.getElementsByClassName("hr");
+    for (var i = 0; i < hr_class.length; i++ ) {
+        hr_class[i].style.color = header_color;
+    }
+
+    document.getElementById("clock-button").className = "mode-button";
+    document.getElementById("timer-button").className = "mode-button";
+    document.getElementById("stopwatch-button").className = "mode-button";
+    
+    // Highlighting clock nav option
+
+    document.getElementById("clock-button-selector").style.display = "inline";
+    document.getElementById("stopwatch-button-selector").style.display = "none";
+    document.getElementById("timer-button-selector").style.display = "none";
+}
+
+document.getElementById("clock-button").addEventListener("click", clock_changer);
+
 // Change mode: Timer
 function timer_changer () {
     // Timer content
@@ -34,36 +67,15 @@ function timer_changer () {
     document.getElementById("timer-button").className = "mode-button-timer";
     document.getElementById("stopwatch-button").className = "mode-button-timer";
 
+    // Highlighting stopwatch nav option
+
+    document.getElementById("timer-button-selector").style.display = "inline";
+    document.getElementById("stopwatch-button-selector").style.display = "none";
+    document.getElementById("clock-button-selector").style.display = "none";
+
 }
 
 document.getElementById("timer-button").addEventListener("click", timer_changer);
-
-// Change mode: Clock
-function clock_changer () {
-    // Clock content
-    document.getElementById("timer-frame").style.display = "none";
-    document.getElementById("stopwatch-frame").style.display = "none";
-    document.getElementById("clock-frame").style.display = "block";
-    // Changing colors
-    const primary_color = "rgb(0, 90, 40)";
-    const secondary_color = "rgb(136, 212, 152)";
-    const header_color = "rgb(0, 80, 35)";
-    
-    document.getElementById("body").style.backgroundColor = primary_color;
-    
-    document.getElementById("header").style.backgroundColor = header_color;
-    
-    var hr_class = document.getElementsByClassName("hr");
-    for (var i = 0; i < hr_class.length; i++ ) {
-        hr_class[i].style.color = header_color;
-    }
-
-    document.getElementById("clock-button").className = "mode-button";
-    document.getElementById("timer-button").className = "mode-button";
-    document.getElementById("stopwatch-button").className = "mode-button";
-}
-
-document.getElementById("clock-button").addEventListener("click", clock_changer);
 
 // Change mode: Stopwatch
 function stopwatch_changer () {
@@ -89,6 +101,12 @@ function stopwatch_changer () {
     document.getElementById("clock-button").className = "mode-button-stopwatch";
     document.getElementById("timer-button").className = "mode-button-stopwatch";
     document.getElementById("stopwatch-button").className = "mode-button-stopwatch";
+
+    // Highlighting stopwatch nav option
+
+    document.getElementById("stopwatch-button-selector").style.display = "inline";
+    document.getElementById("clock-button-selector").style.display = "none";
+    document.getElementById("timer-button-selector").style.display = "none";
 }
 
 document.getElementById("stopwatch-button").addEventListener("click", stopwatch_changer);

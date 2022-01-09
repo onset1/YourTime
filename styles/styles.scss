@@ -136,6 +136,35 @@ nav {
     width: 90%;
     align-self: flex-start;
   }
+  #clock-button-selector {
+    background-color: $secondary-color;
+    width: 10px;
+    height: 38px;
+    position: absolute;
+    left: 20px;
+    top: 230px;
+    border-radius: 5px;
+  }
+  #timer-button-selector {
+    display: none;
+    background-color: $timer-secondary-color;
+    width: 10px;
+    height: 38px;
+    position: absolute;
+    left: 20px;
+    top: 290px;
+    border-radius: 5px;
+  }
+  #stopwatch-button-selector {
+    display: none;
+    background-color: $stopwatch-secondary-color;
+    width: 10px;
+    height: 38px;
+    position: absolute;
+    left: 20px;
+    top: 350px;
+    border-radius: 5px;
+  }
   .mode-button {
     width: 70%;
     padding: 5px;
@@ -216,12 +245,13 @@ main {
         grid-template-columns: repeat(3, fr);
         grid-template-rows: repeat(3, fr);
         .timer-button {
-          background-color: $timer-header-color;
-          color: white;
+          background-color: $timer-third-color;
+          color: $gray-1;
           border: 0px none white;
           width: 50%;
           justify-self: center;
           border-radius: 3px;
+          font-weight: bold;
           &:hover {
             background-color: $timer-secondary-color;
             color: $gray-1;
@@ -291,6 +321,7 @@ main {
       background-color: $stopwatch-third-color;
       color: $gray-1;
       border-radius: 5px;
+      display: none;
       #stopwatch-time {
         font-size: 80px;
         padding: 10px;
