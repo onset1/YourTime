@@ -282,6 +282,205 @@ main section .clock-frame #clock-date {
   background-color: #f3e9d2;
 }
 
+main section .timer-frame {
+  display: none;
+}
+
+main section .timer-frame #timer-time {
+  font-size: 80px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #dabfd1;
+  color: #282828;
+  padding: 10px;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (fr)[3];
+      grid-template-columns: repeat(3, fr);
+  -ms-grid-rows: (fr)[3];
+      grid-template-rows: repeat(3, fr);
+}
+
+main section .timer-frame #timer-time .timer-button {
+  background-color: #500200;
+  color: white;
+  border: 0px none white;
+  width: 50%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 3px;
+}
+
+main section .timer-frame #timer-time .timer-button:hover {
+  background-color: #d48898;
+  color: #282828;
+}
+
+main section .timer-frame #timer-time .timer-button:active {
+  -webkit-box-shadow: 1px 1px 1px 1px #282828;
+          box-shadow: 1px 1px 1px 1px #282828;
+}
+
+main section .timer-frame #timer-time #timer-button-up-hour {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+main section .timer-frame #timer-time #timer-button-up-minute {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+main section .timer-frame #timer-time #timer-button-up-second {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+main section .timer-frame #timer-time #timer-button-down-hour {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+}
+
+main section .timer-frame #timer-time #timer-button-down-minute {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+}
+
+main section .timer-frame #timer-time #timer-button-down-second {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 /4;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+}
+
+main section .timer-frame #timer-time #timer-time-content {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+}
+
+main section .timer-frame #timer-options {
+  font-size: 30px;
+  text-align: center;
+  background-color: #f3e9d2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+main section .timer-frame #timer-options #timer-option-1,
+main section .timer-frame #timer-options #timer-option-2 {
+  font-size: 25px;
+  margin: 5px 0px;
+  background-color: #282828;
+  color: white;
+  border: 0px none white;
+  width: 30%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 3px;
+}
+
+main section .timer-frame #timer-options #timer-option-1:hover,
+main section .timer-frame #timer-options #timer-option-2:hover {
+  background-color: #d48898;
+  color: #282828;
+}
+
+main section .timer-frame #timer-options #timer-option-1:active,
+main section .timer-frame #timer-options #timer-option-2:active {
+  -webkit-box-shadow: 1px 1px 1px 1px #282828;
+          box-shadow: 1px 1px 1px 1px #282828;
+}
+
+main section .stopwatch-frame {
+  background-color: #bfdad3;
+  color: #282828;
+  border-radius: 5px;
+}
+
+main section .stopwatch-frame #stopwatch-time {
+  font-size: 80px;
+  padding: 10px;
+  text-align: center;
+}
+
+main section .stopwatch-frame #stopwatch-options {
+  font-size: 30px;
+  text-align: center;
+  background-color: #f3e9d2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+main section .stopwatch-frame #stopwatch-options #stopwatch-option-1,
+main section .stopwatch-frame #stopwatch-options #stopwatch-option-2 {
+  font-size: 25px;
+  margin: 5px 0px;
+  background-color: #282828;
+  color: white;
+  border: 0px none white;
+  width: 30%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 3px;
+}
+
+main section .stopwatch-frame #stopwatch-options #stopwatch-option-1:hover,
+main section .stopwatch-frame #stopwatch-options #stopwatch-option-2:hover {
+  background-color: #88c3d4;
+  color: #282828;
+}
+
+main section .stopwatch-frame #stopwatch-options #stopwatch-option-1:active,
+main section .stopwatch-frame #stopwatch-options #stopwatch-option-2:active {
+  -webkit-box-shadow: 1px 1px 1px 1px #282828;
+          box-shadow: 1px 1px 1px 1px #282828;
+}
+
 main aside {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;

@@ -11,10 +11,15 @@ setInterval(primary_function, 1000)
 
 // Change mode: Timer
 function timer_changer () {
+    // Timer content
+    document.getElementById("clock-frame").style.display = "none";
+    document.getElementById("stopwatch-frame").style.display = "none";
+    document.getElementById("timer-frame").style.display = "block";
     // Changing colors (hue to -145)
     const primary_color = "rgb(90, 2, 0)";
     const secondary_color = "rgb(212, 136, 152)"
     const header_color = "rgb(80, 2, 0)";
+    const third_color = "rgb(218, 191, 209)";
     
     document.getElementById("body").style.backgroundColor = primary_color;
     
@@ -35,6 +40,10 @@ document.getElementById("timer-button").addEventListener("click", timer_changer)
 
 // Change mode: Clock
 function clock_changer () {
+    // Clock content
+    document.getElementById("timer-frame").style.display = "none";
+    document.getElementById("stopwatch-frame").style.display = "none";
+    document.getElementById("clock-frame").style.display = "block";
     // Changing colors
     const primary_color = "rgb(0, 90, 40)";
     const secondary_color = "rgb(136, 212, 152)";
@@ -58,10 +67,15 @@ document.getElementById("clock-button").addEventListener("click", clock_changer)
 
 // Change mode: Stopwatch
 function stopwatch_changer () {
+    // Stopwatch content
+    document.getElementById("clock-frame").style.display = "none";
+    document.getElementById("timer-frame").style.display = "none";
+    document.getElementById("stopwatch-frame").style.display = "block";
     // Changing colors (hue to +60)
     const primary_color = "rgb(0, 49, 90)";
     const secondary_color = "rgb(136, 195, 212)";
     const header_color = "rgb(0, 43, 80)";
+    const stopwatch_third_color = "rgb(191, 218, 211)";
     
     document.getElementById("body").style.backgroundColor = primary_color;
     

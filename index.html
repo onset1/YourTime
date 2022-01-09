@@ -49,9 +49,33 @@
     </nav>
     <main>
         <section>
-            <div class="clock-frame">
+            <div id="clock-frame" class="clock-frame">
                 <div id="clock-time"></div>
                 <div id="clock-date"></div>
+            </div>
+            <div id="timer-frame" class="timer-frame">
+                <div id="timer-time">
+                    <button id="timer-button-up-hour" class="timer-button">▲</button>
+                    <button id="timer-button-up-minute" class="timer-button">▲</button>
+                    <button id="timer-button-up-second" class="timer-button">▲</button>
+                    <button id="timer-button-down-hour" class="timer-button">▼</button>
+                    <button id="timer-button-down-minute" class="timer-button">▼</button>
+                    <button id="timer-button-down-second" class="timer-button">▼</button>
+                    <div id="timer-time-content">
+                        00:00:00
+                    </div>
+                </div>
+                <div id="timer-options">
+                    <button id="timer-option-1">Start</button>
+                    <button id="timer-option-2">Cancel</button>
+                </div>
+            </div>
+            <div id="stopwatch-frame" class="stopwatch-frame">
+                <div id="stopwatch-time">00:00:00</div>
+                <div id="stopwatch-options">
+                    <button id="stopwatch-option-1">Start</button>
+                    <button id="stopwatch-option-2">Lap</button>
+                </div>
             </div>
         </section>
         <aside>
