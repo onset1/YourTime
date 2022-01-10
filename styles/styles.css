@@ -50,9 +50,11 @@ header #header-title {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
-header #language-container {
+header #language-supercontainer {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
@@ -73,7 +75,18 @@ header #language-container {
   gap: 20px;
 }
 
-header #language-container #languages-img {
+header #language-supercontainer:hover #language-list {
+  display: block;
+}
+
+header #language-supercontainer #language-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+header #language-supercontainer #language-container #languages-img {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
@@ -82,7 +95,7 @@ header #language-container #languages-img {
   cursor: pointer;
 }
 
-header #language-container #selected-language {
+header #language-supercontainer #language-container #selected-language {
   font-size: 12;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -91,8 +104,7 @@ header #language-container #selected-language {
       align-self: center;
 }
 
-header #language-container #expand-img-top {
-  margin-left: 9px;
+header #language-supercontainer #language-container #expand-img-top {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
@@ -100,8 +112,8 @@ header #language-container #expand-img-top {
       align-self: center;
 }
 
-header #language-list {
-  display: block;
+header #language-supercontainer #language-list {
+  display: none;
   position: absolute;
   background-color: #282828;
   color: white;
@@ -112,7 +124,7 @@ header #language-list {
   border-top: solid 8px #005023;
 }
 
-header #language-list .language-pair {
+header #language-supercontainer #language-list .language-pair {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,12 +140,12 @@ header #language-list .language-pair {
           align-items: center;
 }
 
-header #language-list .language-pair:hover {
+header #language-supercontainer #language-list .language-pair:hover {
   background-color: #88d498;
   color: #282828;
 }
 
-header #language-list .language-pair .language-icon {
+header #language-supercontainer #language-list .language-pair .language-icon {
   position: relative;
   margin: 0;
   display: inline-block;
@@ -144,7 +156,7 @@ header #language-list .language-pair .language-icon {
   top: 14px;
 }
 
-header #language-list .language-pair .language-option {
+header #language-supercontainer #language-list .language-pair .language-option {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
@@ -157,7 +169,111 @@ header #language-list .language-pair .language-option {
   padding: 0px 20px 5px 40px;
 }
 
-header #language-list .language-pair .language-status {
+header #language-supercontainer #language-list .language-pair .language-status {
+  font-size: 12px;
+  position: absolute;
+  right: 3px;
+  margin-top: 6px;
+}
+
+header #language-supercontainer #language-list .timer-language-pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #language-supercontainer #language-list .timer-language-pair:hover {
+  background-color: #d48898;
+  color: #282828;
+}
+
+header #language-supercontainer #language-list .timer-language-pair .language-icon {
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  width: 22px;
+  height: 14px;
+  right: 40px;
+  border-radius: 4px;
+  top: 14px;
+}
+
+header #language-supercontainer #language-list .timer-language-pair .language-option {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 12px;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  padding: 0px 20px 5px 40px;
+}
+
+header #language-supercontainer #language-list .timer-language-pair .language-status {
+  font-size: 12px;
+  position: absolute;
+  right: 3px;
+  margin-top: 6px;
+}
+
+header #language-supercontainer #language-list .stopwatch-language-pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #language-supercontainer #language-list .stopwatch-language-pair:hover {
+  background-color: #88c3d4;
+  color: #282828;
+}
+
+header #language-supercontainer #language-list .stopwatch-language-pair .language-icon {
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  width: 22px;
+  height: 14px;
+  right: 40px;
+  border-radius: 4px;
+  top: 14px;
+}
+
+header #language-supercontainer #language-list .stopwatch-language-pair .language-option {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 12px;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  padding: 0px 20px 5px 40px;
+}
+
+header #language-supercontainer #language-list .stopwatch-language-pair .language-status {
   font-size: 12px;
   position: absolute;
   right: 3px;

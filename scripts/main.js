@@ -32,7 +32,25 @@ function clock_changer () {
     document.getElementById("clock-button").className = "mode-button";
     document.getElementById("timer-button").className = "mode-button";
     document.getElementById("stopwatch-button").className = "mode-button";
+
+    // Changing colors of language options
+
+    // var hr_class = document.getElementsByClassName("hr");
+    // for (var i = 0; i < hr_class.length; i++ ) {
+    //     hr_class[i].style.color = header_color;
+    // };
     
+    // Changing color of language list's top border (little trick)
+
+    document.getElementById("language-list").style.borderTopColor = header_color;
+
+    // Changing color of language options (when hovered)
+
+    document.getElementById("language-pair-en").className = "language-pair";
+    document.getElementById("language-pair-eo").className = "language-pair";
+    document.getElementById("language-pair-es").className = "language-pair";
+    document.getElementById("language-pair-fr").className = "language-pair";
+
     // Highlighting clock nav option
 
     document.getElementById("clock-button-selector").style.display = "inline";
@@ -66,6 +84,17 @@ function timer_changer () {
     document.getElementById("clock-button").className = "mode-button-timer";
     document.getElementById("timer-button").className = "mode-button-timer";
     document.getElementById("stopwatch-button").className = "mode-button-timer";
+
+    // Changing color of language list's top border (little trick)
+
+    document.getElementById("language-list").style.borderTopColor = header_color;
+
+    // Changing color of language options (when hovered)
+
+    document.getElementById("language-pair-en").className = "timer-language-pair";
+    document.getElementById("language-pair-eo").className = "timer-language-pair";
+    document.getElementById("language-pair-es").className = "timer-language-pair";
+    document.getElementById("language-pair-fr").className = "timer-language-pair";
 
     // Highlighting stopwatch nav option
 
@@ -101,6 +130,17 @@ function stopwatch_changer () {
     document.getElementById("clock-button").className = "mode-button-stopwatch";
     document.getElementById("timer-button").className = "mode-button-stopwatch";
     document.getElementById("stopwatch-button").className = "mode-button-stopwatch";
+
+    // Changing color of language list's top border (little trick)
+
+    document.getElementById("language-list").style.borderTopColor = header_color;
+
+    // Changing color of language options (when hovered)
+
+    document.getElementById("language-pair-en").className = "stopwatch-language-pair";
+    document.getElementById("language-pair-eo").className = "stopwatch-language-pair";
+    document.getElementById("language-pair-es").className = "stopwatch-language-pair";
+    document.getElementById("language-pair-fr").className = "stopwatch-language-pair";
 
     // Highlighting stopwatch nav option
 
