@@ -1,5 +1,5 @@
 // Display real time and date
-function primary_function () {
+function primary_function() {
     var value = new Date()
     var date = value.getFullYear() + "-" + ("0"+((value.getMonth())+1)).slice(-2) + "-" + ("0"+((value.getDay())+1)).slice(-2);
     var time_now = ("0"+((value.getHours()))).slice(-2) + ":" + ("0"+((value.getMinutes()))).slice(-2) + ":" + ("0"+((value.getSeconds()))).slice(-2);
@@ -7,10 +7,11 @@ function primary_function () {
     document.getElementById("clock-date").innerHTML = date;
 }
 
+
 setInterval(primary_function, 1000)
 
 // Change mode: Clock
-function clock_changer () {
+function clock_changer() {
     // Clock content
     document.getElementById("timer-frame").style.display = "none";
     document.getElementById("stopwatch-frame").style.display = "none";
@@ -61,7 +62,7 @@ function clock_changer () {
 document.getElementById("clock-button").addEventListener("click", clock_changer);
 
 // Change mode: Timer
-function timer_changer () {
+function timer_changer() {
     // Timer content
     document.getElementById("clock-frame").style.display = "none";
     document.getElementById("stopwatch-frame").style.display = "none";
@@ -106,8 +107,92 @@ function timer_changer () {
 
 document.getElementById("timer-button").addEventListener("click", timer_changer);
 
+// Stopwatch
+var stopwatch_t = document.getElementById("stopwatch-time")
+var stopwatch_h = 0;
+var stopwatch_m = 0;
+var stopwatch_s = 0;
+var stopwatch_st = 0;
+var stopwatch_state = false;
+
+function stopwatch_decision() {
+    // Decides whether the button says "start" or "stop"
+    if (stopwatch_state == false) {
+        document.getElementById("stopwatch-option-1").innerHTML = "Stop";
+        stopwatch_start();
+    } else {
+        document.getElementById("stopwatch-option-1").innerHTML = "Start";
+        stopwatch_stop();
+    }
+}
+
+function stopwatch_start() {
+    stopwatch_state = true;
+    stopwatch_work();
+}
+
+function stopwatch_work() {
+    if (stopwatch_state == true) {
+        stopwatch_h = parseInt(stopwatch_h)
+        stopwatch_m = parseInt(stopwatch_m)
+        stopwatch_s = parseInt(stopwatch_s)
+    
+        stopwatch_s = stopwatch_s + 1;
+    
+        if (stopwatch_s == 60) {
+            stopwatch_m = stopwatch_m + 1;
+            stopwatch_s = 0;
+        }
+        if (stopwatch_m == 60) {
+            stopwatch_h = stopwatch_h + 1;
+            stopwatch_m = 0;
+            stopwatch_s = 0;
+        }
+        // Making sure numbers come in two digits
+    
+        if (stopwatch_s < 10 || stopwatch_s == 0) {
+            stopwatch_s = '0' + stopwatch_s;
+          }
+        if (stopwatch_m < 10 || stopwatch_m == 0) {
+            stopwatch_m = '0' + stopwatch_m;
+        }
+        if (stopwatch_h < 10 || stopwatch_h == 0) {
+            stopwatch_h = '0' + stopwatch_h;
+        }
+        
+        // Final result
+
+        stopwatch_t.innerHTML = stopwatch_h + ":" + stopwatch_m + ":" + stopwatch_s;
+
+        setTimeout(stopwatch_work, 1000);
+
+        var start = new Date().getTime();
+        setInterval(function() {
+            var now = new Date().getTime();
+            var elapsed = now-start;
+            var timeleft = 10000-elapsed; 
+            $("#stopwatch_t").text(timeleft);
+        },);
+    }
+}
+
+function stopwatch_stop() {
+    stopwatch_state = false;
+}
+
+function stopwatch_reset() {
+    stopwatch_t.innerHTML = "00:00:00";
+    document.getElementById("stopwatch-option-1").innerHTML = "Start";
+    stopwatch_h = 0;
+    stopwatch_m = 0;
+    stopwatch_s = 0;
+    stopwatch_state = false;
+}
+
+
+
 // Change mode: Stopwatch
-function stopwatch_changer () {
+function stopwatch_changer() {
     // Stopwatch content
     document.getElementById("clock-frame").style.display = "none";
     document.getElementById("timer-frame").style.display = "none";
