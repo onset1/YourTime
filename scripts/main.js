@@ -61,6 +61,93 @@ function clock_changer() {
 
 document.getElementById("clock-button").addEventListener("click", clock_changer);
 
+// Timer
+let timer_h = 0;
+let timer_m = 0;
+let timer_s = 0;
+let timer_t = document.getElementById("timer-time-content")
+
+function timer_h_up() {
+    timer_h = timer_h + 1;
+    if (timer_h < 10)  {
+        timer_t.innerHTML = "0" + timer_h + ":" + timer_m + ":" + timer_s;
+    //  Conditional so that the maximum numbers of hours is 99
+    } else if (timer_h > 99) {
+        timer_h = 99;
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    } else {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    }
+}
+
+function timer_h_down() {
+    timer_h = timer_h - 1;
+    // Conditional so that the number of hours doesn't go negative
+    if (timer_h < 0) {
+        timer_h = 0;
+        timer_t.innerHTML = "0" + timer_h + ":" + timer_m + ":" + timer_s;
+    // Conditional so that there's only two digits
+    } else if (timer_h < 10)  {
+        timer_t.innerHTML = "0" + timer_h + ":" + timer_m + ":" + timer_s;
+    } else {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    }
+}
+
+function timer_m_up() {
+    timer_m = timer_m + 1;
+    if (timer_m < 10)  {
+        timer_t.innerHTML = timer_h + ":" + "0" + timer_m + ":" + timer_s;
+    //  Conditional so that the maximum numbers of minutes is 59
+    } else if (timer_m > 59) {
+        timer_m = 0;
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    } else {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    }
+}
+
+function timer_m_down() {
+    timer_m = timer_m - 1;
+    // Conditional so that the number of minutes doesn't go negative
+    if (timer_m < 0) {
+        timer_m = 59;
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    // Conditional so that there's only two digits
+    } else if (timer_m < 10)  {
+        timer_t.innerHTML = timer_h + ":" + "0" + timer_m + ":" + timer_s;
+    } else {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    }
+}
+
+function timer_s_up() {
+    timer_s = timer_s + 1;
+    if (timer_s < 10)  {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + "0" + timer_s;
+    //  Conditional so that the maximum numbers of minutes is 59
+    } else if (timer_s > 59) {
+        timer_s = 0;
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    } else {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    }
+}
+
+function timer_s_down() {
+    timer_s = timer_s - 1;
+    // Conditional so that the number of minutes doesn't go negative
+    if (timer_s < 0) {
+        timer_s = 59;
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    // Conditional so that there's only two digits
+    } else if (timer_s < 10)  {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + "0" + timer_s;
+    } else {
+        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    }
+}
+
 // Change mode: Timer
 function timer_changer() {
     // Timer content

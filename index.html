@@ -60,12 +60,12 @@
             </div>
             <div id="timer-frame" class="timer-frame">
                 <div id="timer-time">
-                    <button id="timer-button-up-hour" class="timer-button">▲</button>
-                    <button id="timer-button-up-minute" class="timer-button">▲</button>
-                    <button id="timer-button-up-second" class="timer-button">▲</button>
-                    <button id="timer-button-down-hour" class="timer-button">▼</button>
-                    <button id="timer-button-down-minute" class="timer-button">▼</button>
-                    <button id="timer-button-down-second" class="timer-button">▼</button>
+                    <button id="timer-button-up-hour" onclick="timer_h_up()" class="timer-button">▲</button>
+                    <button id="timer-button-up-minute" onclick="timer_m_up()" class="timer-button">▲</button>
+                    <button id="timer-button-up-second" onclick="timer_s_up()" class="timer-button">▲</button>
+                    <button id="timer-button-down-hour" onclick="timer_h_down()" class="timer-button">▼</button>
+                    <button id="timer-button-down-minute" onclick="timer_m_down()" class="timer-button">▼</button>
+                    <button id="timer-button-down-second" onclick="timer_s_down()" class="timer-button">▼</button>
                     <div id="timer-time-content">
                         00:00:00
                     </div>
