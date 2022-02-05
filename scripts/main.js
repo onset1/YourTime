@@ -62,49 +62,59 @@ function clock_changer() {
 document.getElementById("clock-button").addEventListener("click", clock_changer);
 
 // Timer
-let timer_h = 0;
-let timer_m = 0;
-let timer_s = 0;
-let timer_t = document.getElementById("timer-time-content")
+var timer_h = 0;
+var timer_m = 0;
+var timer_s = 0;
+var timer_t = document.getElementById("timer-time-content")
+
+// Display values: useful when adding leading zeroes
+var timer_h_show;
+var timer_m_show;
+var timer_s_show;
+
+function timer_show_up_values() {
+    if (timer_h < 10) {
+        timer_h_show = timer_h.toString().padStart(2, 0);
+    }
+    if (timer_m < 10) {
+        timer_m_show = timer_m.toString().padStart(2, 0);
+    }
+    if (timer_s < 10) {
+        timer_s_show = timer_s.toString().padStart(2, 0);
+    }
+    timer_t.innerHTML = timer_h_show + ":" + timer_m_show + ":" + timer_s_show;
+
+}
 
 function timer_h_up() {
     timer_h = timer_h + 1;
-    if (timer_h < 10)  {
-        timer_t.innerHTML = "0" + timer_h + ":" + timer_m + ":" + timer_s;
     //  Conditional so that the maximum numbers of hours is 99
-    } else if (timer_h > 99) {
-        timer_h = 99;
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
-    } else {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+    if (timer_h > 99) {
+        timer_h = 0;
     }
+    timer_h_show = timer_h;
+    timer_show_up_values();
 }
 
 function timer_h_down() {
     timer_h = timer_h - 1;
     // Conditional so that the number of hours doesn't go negative
     if (timer_h < 0) {
-        timer_h = 0;
-        timer_t.innerHTML = "0" + timer_h + ":" + timer_m + ":" + timer_s;
-    // Conditional so that there's only two digits
-    } else if (timer_h < 10)  {
-        timer_t.innerHTML = "0" + timer_h + ":" + timer_m + ":" + timer_s;
-    } else {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
+        timer_h = 99;
     }
+    timer_h_show = timer_h;
+    timer_show_up_values();
+
 }
 
 function timer_m_up() {
     timer_m = timer_m + 1;
-    if (timer_m < 10)  {
-        timer_t.innerHTML = timer_h + ":" + "0" + timer_m + ":" + timer_s;
     //  Conditional so that the maximum numbers of minutes is 59
-    } else if (timer_m > 59) {
+    if (timer_m > 59) {
         timer_m = 0;
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
-    } else {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
     }
+    timer_m_show = timer_m;
+    timer_show_up_values();
 }
 
 function timer_m_down() {
@@ -112,26 +122,19 @@ function timer_m_down() {
     // Conditional so that the number of minutes doesn't go negative
     if (timer_m < 0) {
         timer_m = 59;
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
-    // Conditional so that there's only two digits
-    } else if (timer_m < 10)  {
-        timer_t.innerHTML = timer_h + ":" + "0" + timer_m + ":" + timer_s;
-    } else {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
     }
+    timer_m_show = timer_m;
+    timer_show_up_values();
 }
 
 function timer_s_up() {
     timer_s = timer_s + 1;
-    if (timer_s < 10)  {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + "0" + timer_s;
     //  Conditional so that the maximum numbers of minutes is 59
-    } else if (timer_s > 59) {
+    if (timer_s > 59) {
         timer_s = 0;
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
-    } else {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
     }
+    timer_s_show = timer_s;
+    timer_show_up_values();
 }
 
 function timer_s_down() {
@@ -139,13 +142,9 @@ function timer_s_down() {
     // Conditional so that the number of minutes doesn't go negative
     if (timer_s < 0) {
         timer_s = 59;
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
-    // Conditional so that there's only two digits
-    } else if (timer_s < 10)  {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + "0" + timer_s;
-    } else {
-        timer_t.innerHTML = timer_h + ":" + timer_m + ":" + timer_s;
     }
+    timer_s_show = timer_s;
+    timer_show_up_values();
 }
 
 // Change mode: Timer
